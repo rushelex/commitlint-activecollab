@@ -1,7 +1,7 @@
 {
   "name": "commitlint-activecollab",
   "description": "Shareable commitlint config enforcing Active Collab commits messages style",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "author": {
     "name": "Aleksey Shelementev",

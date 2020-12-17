@@ -1,7 +1,7 @@
 {
   "name": "commitlint-activecollab-utils",
   "description": "A set of utils for commitlint-activecollab monorepo",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "author": {
     "name": "Aleksey Shelementev",
