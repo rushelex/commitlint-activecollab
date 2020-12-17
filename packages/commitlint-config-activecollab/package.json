@@ -1,0 +1,43 @@
+{
+  "name": "commitlint-config-activecollab",
+  "description": "A recommended config who contain preconfigured rules for Active Collab commits messages style",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Aleksey Shelementev",
+    "email": "rushelex@gmail.com",
+    "url": "https://github.com/rushelex/"
+  },
+  "keywords": [
+    "commitlint",
+    "activecollab-commitlint",
+    "activecollab-style",
+    "activecollab",
+    "commitlintplugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rushelex/commitlint-activecollab"
+  },
+  "bugs": {
+    "url": "https://github.com/rushelex/commitlint-activecollab/issues"
+  },
+  "main": "./build/index.js",
+  "types": "./@types",
+  "scripts": {
+    "build": "rimraf ./build && cross-env NODE_ENV=production webpack",
+    "watch": "cross-env NODE_ENV=development webpack -w",
+    "postinstall": "opencollective-postinstall || exit 0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^8.0.12",
+    "typescript": "^4.1.3",
+    "webpack": "^5.10.3",
+    "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {
+    "commitlint-activecollab-utils": "^1.0.0"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "name": "commitlint-activecollab",
+  "description": "Shareable commitlint config enforcing Active Collab commits messages style",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Aleksey Shelementev",
+    "email": "rushelex@gmail.com",
+    "url": "https://github.com/rushelex/"
+  },
+  "keywords": [
+    "commitlint",
+    "activecollab-commitlint",
+    "activecollab-style",
+    "activecollab"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rushelex/commitlint-activecollab"
+  },
+  "bugs": {
+    "url": "https://github.com/rushelex/commitlint-activecollab/issues"
+  },
+  "scripts": {
+    "build:packages": "lerna run build",
+    "watch:packages": "lerna run watch",
+    "clean:packages": "rm -rf ./packages/*/build",
+    "link:packages": "lerna bootstrap",
+    "publish:packages": "npm run link:packages && npm run build:packages && lerna publish --message=\"chore: publish changed packages\"",
+    "test:packages": "jest --coverage",
+    "watch:test:packages": "jest --watch",
+    "lint:packages": "eslint ./packages --ext .ts --max-warnings=0",
+    "fix:packages": "eslint ./packages --ext .ts --fix --max-warnings=0"
+  },
+  "lint-staged": {
+    "*.{ts}": [
+      "npm run lint:packages",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@types/jest": "^26.0.19",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-react": "^7.21.5",
+    "husky": "^4.3.6",
+    "jest": "^26.6.3",
+    "lerna": "^3.22.1",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.3"
+  }
+}

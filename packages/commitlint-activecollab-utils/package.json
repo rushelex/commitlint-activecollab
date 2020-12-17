@@ -1,0 +1,39 @@
+{
+  "name": "commitlint-activecollab-utils",
+  "description": "A set of utils for commitlint-activecollab monorepo",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Aleksey Shelementev",
+    "email": "rushelex@gmail.com",
+    "url": "https://github.com/rushelex/"
+  },
+  "keywords": [
+    "commitlint",
+    "activecollab-commitlint",
+    "activecollab-style",
+    "activecollab",
+    "commitlintplugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rushelex/commitlint-activecollab"
+  },
+  "bugs": {
+    "url": "https://github.com/rushelex/commitlint-activecollab/issues"
+  },
+  "main": "./build/index.js",
+  "types": "./@types",
+  "scripts": {
+    "build": "rimraf ./build && cross-env NODE_ENV=production webpack",
+    "watch": "cross-env NODE_ENV=development webpack -w"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^8.0.12",
+    "typescript": "^4.1.3",
+    "webpack": "^5.10.3",
+    "webpack-cli": "^4.2.0"
+  }
+}
